@@ -1,4 +1,7 @@
-# Question 1
+# Assignment1.pdf:
+ - This file contains description of 10 questions and guidlines for input/output.
+# Coding Approach:
+## Question 1
 ##### a) created directory using `mkdir` command and cd into it by `cd` command.
 ##### b) made 5 files using `touch` command. `{}` is helpful to create multiple files in 1 line.
 ##### c) 
@@ -19,7 +22,7 @@ Hence, content is displayed in long list format sorted in increasing order of fi
 "\``pwd`\`" is used to display absolute path of result.
 If we remove that and suppose `1.txt` is present in current directory, then it will display `./1.txt` where `.` represents current directory.
 
-# Question 2
+## Question 2
 - I have used `compgen -c` command. which gives list of all executable commands.
 - This list is given to `grep` for make list of commands which contains only letters of given word in input. So, total matching time will be less afterwards and stored in `results`.
 - Input word is given to `grep -o . `which  gives all letters of given word (each character in newline). then it is sorted using `sort` command and stored in `input_word`.
@@ -28,7 +31,7 @@ If we remove that and suppose `1.txt` is present in current directory, then it w
 - if they matches then original command from `results` is stored in `original` variable and loop is breaked using `break` statement and sets `flag` value to '1' (which was previously initialized as '0') 
 - Atlast, if `flag` contains `1` then command name and `Yes` is displayed otherwise `No` is displayed.
 
-# Question 3
+## Question 3
 ##### Assumptions:
 - It shows commands executed in previous terminal session. (Not in current session)
 
@@ -44,22 +47,22 @@ If `count is 0` then current `i` is count value.
 If `count is 1` then current `i` is command name.
 -----> so, if `i` is `count value` then stored in `temp` variable. When command name comes(in next iteration) they are printed in desired format.
 
-# Question 4
+## Question 4
 - I extracted `Alphanumeric` characters from input string.
 - since `grep -o` gives each word in seperate line, i merged them by replacing `\n` with `space` by using `tr` command.
 - Then truncated last space using `sed` command. and then displayed output in brackets by using `"(${ans[*]})"` command.
 
-# Question 5
+## Question 5
 - Input word (`line`) is converted into lowercase by using `tr` command.
 - Then that word is reversed by using `rev` command and stored into another variable called `line_rev`.
 - Compared `line` and `line_rev` by using `test` command and they match then displayed `Yes` otherwise `No`.
 
-# Question 6
+## Question 6
  - Traversed in Argument array (`$@`) using `for` loop.
  - Stored 1st element in `res` variable. when 2nd element comes(In 2nd iteration), Exponentiation is performed between `res` and `current element`(2nd element of arguments array) and result is stored in `res` variable.
  - same operations are performed for all elements and the final value in `res` variable is result which is displayed atlast by `echo` command.
 
-# Question 7
+## Question 7
  - Took Process Information of running processes using `ps au` command.
  - process id is present in 2nd column of previous command's output. So, it is extracted using `tr` and `cut` command.
  - Deleted  1st entry which contains word `PID`(title) from previous output and stored process IDs into `pid.txt` file.
@@ -67,7 +70,7 @@ If `count is 1` then current `i` is command name.
  - if `count` < `n` then made `n` = `count`.
  - Then displayed first `n` lines using `head` command from `pid.txt` file.
 
-# Question 8
+## Question 8
 ##### Format: `Min HR Dom Mon Dow Command`
 ----->Manual checking is very complex. `crontab` may contains @yearly, @monthly, etc followed by command name.
 ----->2 numbers can be present inside 1 field. (Ex:`Mon` may contain 4,6 ( means 4rth and 6th month))
@@ -85,7 +88,7 @@ If `count is 1` then current `i` is command name.
  - We only need to know the status which can be known by `$?` command we used.
  - displayed `Valid` if `$? = 0` becomes true, otherwise displayed `Invalid`. 
 
-# Question 9
+## Question 9
  - I truncated spaces from input using `sed` command.
  - If input is `null` or has length `1` then input is invalid (As per the question). So, For both cases i printed `Invalid`. 
  - If input is `0` then it actually satisfies the constraints. because at the end `0 % 10 = 0`. So, we have to handle this case seperatly. Other all `length=1` digits
@@ -96,7 +99,7 @@ stays invalid in checking constraints. (Ex: `1 % 10 != 0`).So, no need to mentio
    - If `count` is `1` then double that digit. If it result becomes `> 9` then subtract `9` from that and append to the left of variable `res`.
  - Then i found sum of all digits of `res`. If sum is divisible by 10 then print `Valid` otherwise print `Invalid`.
 
-# Question 10
+## Question 10
  - Read operator into variable `S`. Set value of `type1` variable's value according to operator type.
  - then took value `n` from input. which is number of operands.
  - Stored 1st operand in `temp`.Then from 2nd iteration onwards, Took operand value performed operation with `temp` and stored result into `temp`.
